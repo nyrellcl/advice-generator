@@ -1,0 +1,41 @@
+@media screen and (max-width: 500px) {
+    .advice-container{
+        .card{
+            width: 90%;
+            height: 50%;
+            span{
+                width: 104px;
+                height: 15px;
+                
+            }
+        }
+    }
+    .advice-divider{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 295px;
+        margin: 0 auto;
+    }
+    
+}
+
+@media screen and (max-width: 390px) {
+    .advice-container{
+        .card{
+            .advice-number{
+                width: 100%;
+                height: auto;
+            }
+            .advice-quote{
+                width: 90%;
+                height: auto;
+                margin: 2rem auto;
+            }
+        }
+        .advice-divider{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
