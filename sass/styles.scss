@@ -5,12 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 
 
-body{
+body {
     background-color: $dark-blue;
     font-family: 'Manrope', sans-serif;
 }
 
-.advice-container{
+.advice-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,51 +18,57 @@ body{
     position: absolute;
     width: 100%;
     height: 100vh;
-    margin:  0 auto;
+    margin: 0 auto;
     z-index: -1;
 
-    
-    .card{
+
+    .card {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100vh;
         border-radius: 15px;
-        width: 540px;
-        height: 332px;
+        width: 80%;
+        height: 50%;
         background-color: $grayish-blue;
-        span{
+
+        span {
             text-transform: uppercase;
             color: $neon-green;
-            width: 122px;
-            height: 18px;
+            width: 100%;
+            height: auto;
             margin: 0 auto;
             left: 208.5px;
-            font-size: 13px;
+            font-size: 24px;
             line-height: 18px;
             text-align: center;
             letter-spacing: 4px;
             top: calc(50% - 18px/2 - 125px);
 
         }
-        q{
+
+        q {
             color: $light-cyan;
-            width: 444px;
-            height: 114px;
+            width: 95%;
+            height: auto;
             text-align: center;
-            margin: 1.5rem 3rem 2.5rem;
+            margin: 2rem auto;
             font-size: 1.75rem;
             line-height: 2.375rem;
         }
     }
-    .advice-divider{
-        width: 444px;
+
+    .advice-divider {
+        width: 100%;
         height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center
     }
 }
 
-.advice-button{
+.advice-button {
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -75,11 +81,21 @@ body{
     z-index: 1;
     bottom: 2rem;
     transition: all 300ms;
-    &:hover, &:focus{
+
+    &:hover,
+    &:focus {
         cursor: pointer;
         box-shadow: 0px 0px 20px $neon-green;
+    }
+
+    &[aria-expanded=true] {
         transform: rotate(135deg);
-        }
+    }
+
+    &[aria-expanded=false] {
+        transform: rotate(0deg);
+        box-shadow: none;
+    }
 }
 
 @import "./mobile/mobile";

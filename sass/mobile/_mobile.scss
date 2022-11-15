@@ -2,19 +2,13 @@
     .advice-container{
         .card{
             width: 90%;
-            height: 50%;
-            span{
-                width: 104px;
-                height: 15px;
-                
-            }
+            height: 50vh;
         }
     }
     .advice-divider{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 295px;
         margin: 0 auto;
     }
     
@@ -26,6 +20,7 @@
             .advice-number{
                 width: 100%;
                 height: auto;
+                font-size: 15px;
             }
             .advice-quote{
                 width: 90%;

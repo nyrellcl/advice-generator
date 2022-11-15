@@ -8,7 +8,7 @@ const adviceBtn = document.querySelector('.advice-button');
  * The response is in JSON, not in JS
  * Need to convert JSON request into JS in order to work with the reponse
  */
-const fetchAdvice = async() =>{
+const fetchAdvice = async () => {
     const response = await fetch(apiLink)
     const advice = await response.json()
     return advice
@@ -20,10 +20,10 @@ const fetchAdvice = async() =>{
  */
 
 const renderAdvice = (adviceObj) => {
-    const {id, advice} = adviceObj;
+    const { id, advice } = adviceObj;
     //textContent sets text of an HTML element to the data from the API
     adviceSpan.textContent = `ADVICE #${id}`;
-    adviceQuote.textContent= advice
+    adviceQuote.textContent = advice
 };
 
 /**
@@ -31,18 +31,18 @@ const renderAdvice = (adviceObj) => {
  * data inside and convert to JS
  * 
  */
-const generateAdvice = async() =>{
+const generateAdvice = async () => {
     const data = await fetchAdvice()
-        const advice = data.slip;
-        renderAdvice(advice)
-        setTimeout((reset)=>{
-            if (reset){
-            adviceBtn.style.transform = "rotate(135deg)";
-            }else{
-                adviceBtn.style.transform = "rotate(0deg)";
-                adviceBtn.style.boxShadow = "none";
-            }
+    const advice = data.slip;
+    const buttonClick = adviceBtn.getAttribute("aria-expanded") === "false";
+    renderAdvice(advice)
+    if (buttonClick) {
+        adviceBtn.setAttribute("aria-expanded", "true");
+        setTimeout(()=>{
+            adviceBtn.setAttribute("aria-expanded", "false")
         }, 1000)
+    }
+
 };
 /**
      * references the window and adds an event listener DOMContentLoaded
@@ -52,7 +52,7 @@ const generateAdvice = async() =>{
      * is clicked, it calls the generateAdvice function to generate a new adivce 
      * from the API data
      */
-window.addEventListener('DOMContentLoaded', () =>{
-    
+window.addEventListener('DOMContentLoaded', () => {
+
     adviceBtn.addEventListener('click', generateAdvice)
 });
