@@ -40,7 +40,7 @@ const generateAdvice = async () => {
         adviceBtn.setAttribute("aria-expanded", "true");
         setTimeout(()=>{
             adviceBtn.setAttribute("aria-expanded", "false")
-        }, 1000)
+        }, 500)
     }
 
 };
