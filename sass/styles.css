@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(218deg, 23%, 16%);
+  font-family: "Manrope", sans-serif;
+}
+
+.advice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  z-index: -1;
+}
+.advice-container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  border-radius: 15px;
+  width: 540px;
+  height: 332px;
+  background-color: hsl(217deg, 19%, 38%);
+}
+.advice-container .card span {
+  text-transform: uppercase;
+  color: hsl(150deg, 100%, 66%);
+  width: 122px;
+  height: 18px;
+  margin: 0 auto;
+  left: 208.5px;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 4px;
+  top: calc(50% - 9px - 125px);
+}
+.advice-container .card q {
+  color: hsl(193deg, 38%, 86%);
+  width: 444px;
+  height: 114px;
+  text-align: center;
+  margin: 1.5rem 3rem 2.5rem;
+  font-size: 1.75rem;
+  line-height: 2.375rem;
+}
+.advice-container .advice-divider {
+  width: 444px;
+  height: 16px;
+}
+
+.advice-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: hsl(150deg, 100%, 66%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: none;
+  z-index: 1;
+  bottom: 2rem;
+  transition: all 300ms;
+}
+.advice-button:hover, .advice-button:focus {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px hsl(150deg, 100%, 66%);
+  transform: rotate(135deg);
+}
+
+@media screen and (max-width: 500px) {
+  .advice-container .card {
+    width: 90%;
+    height: 50%;
+  }
+  .advice-container .card span {
+    width: 104px;
+    height: 15px;
+  }
+  .advice-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 295px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 390px) {
+  .advice-container .card .advice-number {
+    width: 100%;
+    height: auto;
+  }
+  .advice-container .card .advice-quote {
+    width: 90%;
+    height: auto;
+    margin: 2rem auto;
+  }
+  .advice-container .advice-divider {
+    width: 100%;
+    height: auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
